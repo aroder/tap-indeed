@@ -1,0 +1,19 @@
+{
+  "type": ["object"],
+  "additionalProperties": false,
+  "properties": {
+    "query": {
+      "type": ["string"]
+    },
+    "location": {
+      "type": ["string"]
+    },
+    "openings_count": {
+      "type": ["integer"]
+    },
+    "batch_ts": {
+      "type": ["string"],
+      "format": "date-time"
+    }
+  }
+}

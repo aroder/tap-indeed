@@ -1,0 +1,162 @@
+{
+    "streams": [
+      {
+        "tap_stream_id": "data_from_file",
+        "key_properties": [
+          "query",
+          "location"
+        ],
+        "schema": {
+          "properties": {
+            "query": {
+              "type": [
+                "string"
+              ]
+            },
+            "location": {
+              "type": [
+                "string"
+              ]
+            },
+            "openings_count": {
+              "type": [
+                "integer"
+              ]
+            },
+            "batch_ts": {
+              "format": "date-time",
+              "type": [
+                "string"
+              ]
+            }
+          },
+          "type": [
+            "object"
+          ],
+          "additionalProperties": false
+        },
+        "stream": "data_from_file",
+        "metadata": [
+          {
+            "breadcrumb": [],
+            "metadata": {
+              "table-key-properties": [
+                "query",
+                "location"
+              ],
+              "forced-replication-method": "FULL_TABLE",
+              "inclusion": "available"
+            }
+          },
+          {
+            "breadcrumb": [
+              "properties",
+              "query"
+            ],
+            "metadata": {
+              "inclusion": "automatic"
+            }
+          },
+          {
+            "breadcrumb": [
+              "properties",
+              "location"
+            ],
+            "metadata": {
+              "inclusion": "automatic"
+            }
+          },
+          {
+            "breadcrumb": [
+              "properties",
+              "openings_count"
+            ],
+            "metadata": {
+              "inclusion": "available"
+            }
+          },
+          {
+            "breadcrumb": [
+              "properties",
+              "batch_ts"
+            ],
+            "metadata": {
+              "inclusion": "available"
+            }
+          }
+        ]
+      },
+      {
+        "tap_stream_id": "openings_counts",
+        "key_properties": [
+          "query",
+          "location"
+        ],
+        "schema": {
+          "properties": {
+            "query": {
+              "type": [
+                "string"
+              ]
+            },
+            "location": {
+              "type": [
+                "string"
+              ]
+            },
+            "openings_count": {
+              "type": [
+                "integer"
+              ]
+            }
+          },
+          "type": [
+            "object"
+          ],
+          "additionalProperties": false
+        },
+        "stream": "openings_counts",
+        "metadata": [
+          {
+            "breadcrumb": [],
+            "metadata": {
+              "table-key-properties": [
+                "query",
+                "location"
+              ],
+              "forced-replication-method": "FULL_TABLE",
+              "inclusion": "available",
+              "selected": true
+            }
+          },
+          {
+            "breadcrumb": [
+              "properties",
+              "query"
+            ],
+            "metadata": {
+              "inclusion": "automatic"
+            }
+          },
+          {
+            "breadcrumb": [
+              "properties",
+              "location"
+            ],
+            "metadata": {
+              "inclusion": "automatic"
+            }
+          },
+          {
+            "breadcrumb": [
+              "properties",
+              "openings_count"
+            ],
+            "metadata": {
+              "inclusion": "available"
+            }
+          }
+        ]
+      }
+    ]
+  }

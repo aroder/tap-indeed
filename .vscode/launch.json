@@ -1,0 +1,22 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Singer Discover",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/tap_indeed/__init__.py",
+      "args": ["--config", "sample_configs/tap-indeed.json", "--discover"]
+    },
+    {
+      "name": "Singer Sync",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/tap_indeed/__init__.py",
+      "args": ["--config", "sample_configs/tap-indeed.json", "--catalog", "catalog.json"]
+    }
+  ]
+}
