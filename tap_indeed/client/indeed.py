@@ -32,9 +32,14 @@ class IndeedClient(object):
             soup = BeautifulSoup(r.text, 'html.parser')
             t = soup.select("div#searchCountPages")
 
-            match = pattern.search(t[0].contents[0])
-            if match is not None:
-                rec['openings_count'] = int(match.group(1))
+            if len(t) == 0:
+                rec['openings_count'] = 0
+            else:
+                match = pattern.search(t[0].contents[0])
+                if match is not None:
+                    rec['openings_count'] = int(match.group(1))
+                else:
+                    rec['openings_count'] = 0
             
             yield rec
 
