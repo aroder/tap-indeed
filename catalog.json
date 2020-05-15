@@ -1,163 +1,179 @@
 {
-    "streams": [
-      {
-        "tap_stream_id": "data_from_file",
-        "key_properties": [
-          "query",
-          "location"
-        ],
-        "schema": {
-          "properties": {
-            "query": {
-              "type": [
-                "string"
-              ]
-            },
-            "location": {
-              "type": [
-                "string"
-              ]
-            },
-            "openings_count": {
-              "type": [
-                "integer"
-              ]
-            },
-            "batch_ts": {
-              "format": "date-time",
-              "type": [
-                "string"
-              ]
-            }
+  "streams": [
+    {
+      "tap_stream_id": "data_from_file",
+      "key_properties": [
+        "query",
+        "location"
+      ],
+      "schema": {
+        "properties": {
+          "query": {
+            "type": [
+              "string"
+            ]
           },
-          "type": [
-            "object"
-          ],
-          "additionalProperties": false
-        },
-        "stream": "data_from_file",
-        "metadata": [
-          {
-            "breadcrumb": [],
-            "metadata": {
-              "table-key-properties": [
-                "query",
-                "location"
-              ],
-              "forced-replication-method": "FULL_TABLE",
-              "inclusion": "available"
-            }
+          "location": {
+            "type": [
+              "string"
+            ]
           },
-          {
-            "breadcrumb": [
-              "properties",
-              "query"
-            ],
-            "metadata": {
-              "inclusion": "automatic"
-            }
+          "openings_count": {
+            "type": [
+              "integer"
+            ]
           },
-          {
-            "breadcrumb": [
-              "properties",
-              "location"
-            ],
-            "metadata": {
-              "inclusion": "automatic"
-            }
-          },
-          {
-            "breadcrumb": [
-              "properties",
-              "openings_count"
-            ],
-            "metadata": {
-              "inclusion": "available"
-            }
-          },
-          {
-            "breadcrumb": [
-              "properties",
-              "batch_ts"
-            ],
-            "metadata": {
-              "inclusion": "available"
-            }
+          "batch_ts": {
+            "format": "date-time",
+            "type": [
+              "string"
+            ]
           }
-        ]
+        },
+        "type": [
+          "object"
+        ],
+        "additionalProperties": false
       },
-      {
-        "tap_stream_id": "openings_counts",
-        "key_properties": [
-          "query",
-          "location"
-        ],
-        "schema": {
-          "properties": {
-            "query": {
-              "type": [
-                "string"
-              ]
-            },
-            "location": {
-              "type": [
-                "string"
-              ]
-            },
-            "openings_count": {
-              "type": [
-                "integer"
-              ]
-            }
-          },
-          "type": [
-            "object"
-          ],
-          "additionalProperties": false
-        },
-        "stream": "openings_counts",
-        "metadata": [
-          {
-            "breadcrumb": [],
-            "metadata": {
-              "table-key-properties": [
-                "query",
-                "location"
-              ],
-              "forced-replication-method": "FULL_TABLE",
-              "inclusion": "available",
-              "selected": true
-            }
-          },
-          {
-            "breadcrumb": [
-              "properties",
-              "query"
-            ],
-            "metadata": {
-              "inclusion": "automatic",
-              "selected": true
-            }
-          },
-          {
-            "breadcrumb": [
-              "properties",
+      "stream": "data_from_file",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "table-key-properties": [
+              "query",
               "location"
             ],
-            "metadata": {
-              "inclusion": "automatic"
-            }
-          },
-          {
-            "breadcrumb": [
-              "properties",
-              "openings_count"
-            ],
-            "metadata": {
-              "inclusion": "available"
-            }
+            "forced-replication-method": "FULL_TABLE",
+            "inclusion": "available"
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "query"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "location"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "openings_count"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "batch_ts"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "tap_stream_id": "openings_counts",
+      "key_properties": [
+        "measured_date",
+        "query",
+        "location"
+      ],
+      "schema": {
+        "properties": {
+          "measured_date": {
+            "format": "date",
+            "type": [
+              "string"
+            ]
+          },
+          "query": {
+            "type": [
+              "string"
+            ]
+          },
+          "location": {
+            "type": [
+              "string"
+            ]
+          },
+          "openings_count": {
+            "type": [
+              "integer"
+            ]
+          }
+        },
+        "type": [
+          "object"
+        ],
+        "additionalProperties": false
+      },
+      "stream": "openings_counts",
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "table-key-properties": [
+              "measured_date",
+              "query",
+              "location"
+            ],
+            "forced-replication-method": "FULL_TABLE",
+            "inclusion": "available",
+            "selected": "true"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "measured_date"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "query"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "location"
+          ],
+          "metadata": {
+            "inclusion": "automatic"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "openings_count"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    }
+  ]
+}

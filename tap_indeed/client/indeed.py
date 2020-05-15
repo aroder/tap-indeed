@@ -16,7 +16,8 @@ def record(query, location):
     return {
         'query': query,
         'location': location,
-        'openings_count': None
+        'openings_count': None,
+        'measured_date': None
     }
 
 
@@ -25,6 +26,7 @@ class IndeedClient(object):
         self.locations = locations if isinstance(locations, list) else locations.split(',')
         self.queries = queries if isinstance(queries, list) else queries.split(',')
         self.records = [record(location, query) for (query, location) in itertools.product(self.locations, self.queries)]
+        self.measured_date = datetime.date.today()
 
     def extract(self):
         for rec in self.records:
@@ -41,6 +43,7 @@ class IndeedClient(object):
                 else:
                     rec['openings_count'] = 0
             
+            rec['measured_date'] = self.measured_date
             yield rec
 
     @singer.utils.ratelimit(3, 1)
