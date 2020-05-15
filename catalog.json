@@ -135,7 +135,8 @@
               "query"
             ],
             "metadata": {
-              "inclusion": "automatic"
+              "inclusion": "automatic",
+              "selected": true
             }
           },
           {
