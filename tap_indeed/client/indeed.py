@@ -22,9 +22,9 @@ def record(query, location):
 
 class IndeedClient(object):
     def __init__(self, locations, queries):
-        self.locations = locations
-        self.queries = queries
-        self.records = [record(location, query) for (query, location) in itertools.product(locations, queries)]
+        self.locations = locations if isinstance(locations, list) else locations.split(',')
+        self.queries = queries if isinstance(queries, list) else queries.split(',')
+        self.records = [record(location, query) for (query, location) in itertools.product(self.locations, self.queries)]
 
     def extract(self):
         for rec in self.records:

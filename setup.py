@@ -12,7 +12,8 @@ setup(
     install_requires=[
         "singer-python==5.9.0",
         "requests==2.23.0",
-        "beautifulsoup4==4.9.0"
+        "beautifulsoup4==4.9.0",
+        "wheel"
     ],
     entry_points="""
     [console_scripts]
