@@ -10,7 +10,8 @@ import singer
 
 batch_ts = datetime.datetime.now()
 pattern = re.compile('Page \d+ of (\d+) jobs')
-URL_TEMPLATE = "https://www.indeed.com/jobs?as_and=&as_phr=&as_any=&as_not=&as_ttl={QUERY}&as_cmp=&jt=all&st=&as_src=&salary=&radius=25&l={LOCATION}&fromage=any&limit=10&sort=date&psf=advsrch&from=advancedsearch"
+# URL_TEMPLATE = "https://www.indeed.com/jobs?as_and=&as_phr=&as_any=&as_not=&as_ttl={QUERY}&as_cmp=&jt=all&st=&as_src=&salary=&radius=25&l={LOCATION}&fromage=any&limit=10&sort=date&psf=advsrch&from=advancedsearch"
+URL_TEMPLATE = "https://www.indeed.com/jobs?q={QUERY}&l={LOCATION}&radius=25&sort=date&vjk=b4ab11dc982891d3"
 
 def record(query, location):
     return {

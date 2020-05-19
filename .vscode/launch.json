@@ -16,7 +16,7 @@
       "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}/tap_indeed/__init__.py",
-      "args": ["--config", "sample_configs/tap-indeed.json", "--catalog", "catalog.json"]
+      "args": ["--config", "sample_configs/tap-indeed-just-one.json", "--catalog", "catalog.json"]
     }
   ]
 }
