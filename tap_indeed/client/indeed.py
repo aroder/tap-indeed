@@ -18,7 +18,9 @@ def record(query, location):
         'query': query,
         'location': location,
         'openings_count': None,
-        'measured_date': None
+        'measured_date': None,
+        '__sdc_extracted_at': batch_ts,
+        '__sdc_sequence': 0,
     }
 
 
@@ -30,6 +32,7 @@ class IndeedClient(object):
         self.measured_date = datetime.date.today()
 
     def extract(self):
+        counter = 1
         for rec in self.records:
             r = self.request(URL_TEMPLATE.format(QUERY=urllib.parse.quote(rec['query']), LOCATION=urllib.parse.quote(rec['location'])))
             soup = BeautifulSoup(r.text, 'html.parser')
@@ -45,6 +48,8 @@ class IndeedClient(object):
                     rec['openings_count'] = 0
             
             rec['measured_date'] = self.measured_date
+            rec['__sdc_sequence'] = counter
+            counter += 1
             yield rec
 
     @singer.utils.ratelimit(3, 1)

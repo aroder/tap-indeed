@@ -1,19 +1,40 @@
 {
-  "type": ["object"],
-  "additionalProperties": false,
-  "properties": {
-    "measured_date": {
-      "type": ["string"],
-      "format": "date"
-    },
-    "query": {
-      "type": ["string"]
-    },
-    "location": {
-      "type": ["string"]
-    },
-    "openings_count": {
-      "type": ["integer"]
+    "type": [
+        "object"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "measured_date": {
+            "type": [
+                "string"
+            ],
+            "format": "date"
+        },
+        "query": {
+            "type": [
+                "string"
+            ]
+        },
+        "location": {
+            "type": [
+                "string"
+            ]
+        },
+        "openings_count": {
+            "type": [
+                "integer"
+            ]
+        },
+        "__sdc_extracted_at": {
+            "type": [
+                "string"
+            ],
+            "format": "datetime"
+        },
+        "__sdc_sequence": {
+            "type": [
+                "integer"
+            ]
+        }
     }
-  }
 }

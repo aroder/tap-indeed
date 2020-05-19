@@ -115,6 +115,17 @@
             "type": [
               "integer"
             ]
+          },
+          "__sdc_extracted_at": {
+            "format": "datetime",
+            "type": [
+              "string"
+            ]
+          },
+          "__sdc_sequence": {
+            "type": [
+              "integer"
+            ]
           }
         },
         "type": [
@@ -170,7 +181,28 @@
             "openings_count"
           ],
           "metadata": {
-            "inclusion": "available"
+            "inclusion": "available",
+            "selected": "true"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "__sdc_extracted_at"
+          ],
+          "metadata": {
+            "inclusion": "available",
+            "selected": "true"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "__sdc_sequence"
+          ],
+          "metadata": {
+            "inclusion": "available",
+            "selected": "true"
           }
         }
       ]
